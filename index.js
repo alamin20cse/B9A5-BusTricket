@@ -8,6 +8,8 @@ let ID0=Number(document.getElementById('id0').innerText);
 LeftSeat=Number(document.getElementById('left-seat').innerText);
 let TAKA=0;
 
+
+
 function seatHandel(event)
 {
     if(!seatList.includes(event.innerText))
@@ -51,3 +53,24 @@ function seatHandel(event)
     }
 
 }
+
+
+const PhoneNumberInput = document.getElementById('phonenumber-input');
+const NextButton = document.getElementById('next-button');
+
+PhoneNumberInput.addEventListener('input', function(event) {
+    const inputValue = event.target.value;
+
+    
+    if (inputValue.length >= 11) {
+        NextButton.removeAttribute('disabled');  
+    } else {
+        NextButton.setAttribute('disabled', true);  
+    }
+});
+
+document.getElementById('continue-button').addEventListener('click',function(){
+    window.location.reload();
+
+
+});
